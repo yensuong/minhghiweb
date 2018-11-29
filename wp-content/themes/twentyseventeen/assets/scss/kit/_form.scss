@@ -1,0 +1,168 @@
+@mixin placeholder-color($color) {
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+		color: $color;
+	}
+	&::-moz-placeholder {  /* Firefox 19+ */
+		color: $color;
+	}
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+}
+/**== input text color
+***************************/
+$tf-color-base: #2b2e38 !default;
+$tf-color-error: #ff3f3f !default;
+$tf-border-base: #d2d2d2 !default;
+/************* Forms - Input Text *******************/
+.tf {
+	height:40px;
+	font-size: 13px;
+	padding-left: 11px;
+	-webkit-appearance:none;
+	border-radius:0px;
+	background-color: #fff;  
+	border:1px solid $tf-border-base;
+	color: $tf-color-base;
+	@include placeholder-color(#9d9d9d);
+
+	&:hover,
+	&:focus,
+	&:active {
+		border-color:$tf-border-base;
+		color:$tf-color-base;
+	}
+	&.small {
+		height: 30px;
+	}
+}
+
+.tf[readonly] {
+	color: $tf-border-base;
+	background-color: #ededed;
+	border-color:$tf-border-base;
+
+	&:hover,
+	&:focus {
+		color: $tf-border-base;
+		background-color: #ededed;
+		border-color:$tf-border-base;
+		box-shadow:none;
+	}
+}
+
+.tf[disabled] {
+	color: $tf-border-base;
+	background-color: #fff;
+	border-color:$tf-border-base;
+	@include placeholder-color($tf-border-base);
+
+	&:hover,
+	&:focus {
+		color: $tf-border-base;
+		background-color: #fff;
+		border-color:$tf-border-base;
+		cursor:not-allowed;
+		box-shadow:none;
+	}
+}
+
+
+.tf_error {
+	border-color: $tf-color-error;
+	color: $tf-color-base;
+	&:hover,
+	&:focus,
+	&:active {
+		border-color: $tf-color-error;
+		color: $tf-color-base;
+	}
+}
+.tf_login {
+	border-color: #898989;
+	border-radius: 3px;
+	height: 40px;
+	font-size: 13px;
+	&.tf_error {
+		border-color: $tf-color-error;
+		color: $tf-color-base;
+		&:hover,
+		&:focus,
+		&:active {
+			border-color: $tf-color-error;
+			color: $tf-color-base;
+		}
+	}
+}
+
+.txt_error {
+	color: $tf-color-error;
+	display: none;
+	margin-top: 6px;
+	margin-bottom: -6px;
+}
+
+.error,
+.form_error{
+	.tf {
+		border-color: $tf-color-error;
+		color: $tf-color-base;
+		&:hover,
+		&:focus,
+		&:active {
+			border-color: $tf-color-error;
+			color: $tf-color-base;
+		}
+	}
+	.txt_error {
+		display: block;
+	}
+}
+
+/*textarea*/
+.ta {
+	background-color:#fff;  
+	border:1px solid $tf-border-base; 
+	color: $tf-color-base;
+	font-size:13px;
+	padding: 8px 11px;
+	line-height:1.5;
+	-webkit-appearance:none;
+	border-radius:3px;
+	resize: none;
+
+	&:hover,
+	&:focus,
+	&:active {
+		border-color: $tf-border-base;
+		color: $tf-color-base;
+	}
+}
+
+.ta.no_resize {
+	resize: none;
+}
+.ta.h102 {
+	height: 102px;
+}
+
+.input_error {
+	border-color: $tf-color-error !important;
+}
+
+// // Format selectbox
+// // -----------------
+select {
+	height: 40px;
+	border: 1px solid #d2d2d2;
+	color: #9d9d9d;
+	padding-left: 8px;
+
+	option {
+		padding: 8px;
+		height: 40px;
+	}
+}

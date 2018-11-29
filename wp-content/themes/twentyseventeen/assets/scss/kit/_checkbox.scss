@@ -1,0 +1,142 @@
+/**== checkbox text color
+***************************/
+$chk-size:                 25px !default;
+$chk-small-size:           15px !default;
+$chk-text-normal:          #afafaf !default;
+$chk-text-checked:         #666666 !default;
+$chk-text-checked-type2:   #092c74 !default;
+$chk-text-inactive:        #d2d2d2 !default;
+$chk-bg-normal:            #bec3c7 !default;
+$chk-bg-checked:           #dc1f26 !default;
+$chk-bg-checked-type2:     #092c74 !default;
+$chk-bg-inactive:          #ededed !default;
+$chk-icon-checked:         #fff !default;
+$chk-icon-inactive:        #d2d2d2 !default;
+//************* Forms - Input Checkbox *******************
+.chk {
+    display:inline-block;
+    cursor:pointer;
+    vertical-align:middle;
+    padding: 0 0 2px 32px;
+    position:relative;
+    min-height: $chk-size;
+    line-height:1.5;
+    font-size:14px;
+    -webkit-user-select: none;
+    &:hover > span:before{
+        background-color: $chk-bg-checked;
+    }
+}
+
+.chk input {
+    display:none;
+}
+.chk > span {
+    display: inline-block;
+    color:$chk-text-normal;
+    padding-top: 4px;
+}
+.chk > span:before{
+    content:"";
+    width:$chk-size;
+    height:$chk-size;
+    position:absolute;
+    left:0;
+    top: 0;
+    background-color: $chk-bg-normal;
+    border:none;
+    border-radius: 50%;
+}
+.chk > span:after{
+    content: " ";
+    background: url(../images/icon_check.png) no-repeat center;
+    display:inline-block;
+    font-family: "datanow" !important;
+    color: $chk-icon-checked;
+    font-size: 11px;
+    line-height: 2.4;
+    font-weight: normal;
+    text-align:center;
+    width:$chk-size;
+    height:$chk-size;
+    position:absolute;
+    left:0;
+    top: 0;
+    background-color:$chk-bg-checked;
+    border:none;
+    border-radius: 50%;
+
+    -webkit-transform:scale(0);
+       -moz-transform:scale(0);
+         -o-transform:scale(0);
+            transform:scale(0);
+
+    -webkit-transition:-webkit-transform 0.1s 0s cubic-bezier(0.455, 0.03, 0.215, 1.33);
+       -moz-transition:-moz-transform 0.1s 0s cubic-bezier(0.455, 0.03, 0.215, 1.33);
+         -o-transition:-o-transform 0.1s 0s cubic-bezier(0.455, 0.03, 0.215, 1.33);
+            transition:transform 0.1s 0s cubic-bezier(0.455, 0.03, 0.215, 1.33);
+}
+// .chk input:checked + span, .chk:hover span{
+.chk input:checked + span {
+    color:$chk-text-checked;
+}
+.chk input:checked + span:after{
+    -webkit-transform:scale(1);
+       -moz-transform:scale(1);
+         -o-transform:scale(1);
+            transform:scale(1);
+}
+.chk input[disabled] + span,
+.chk input[readonly] + span {
+    color: $chk-text-inactive;
+}
+.chk input[disabled] + span:before,
+.chk input[readonly] + span:before,
+.chk input[disabled] + span:after,
+.chk input[readonly] + span:after {
+   background-color:$chk-bg-inactive;
+   color: $chk-icon-inactive;
+   border: 1px solid #d2d2d2;
+}
+.chk.hide_txt {
+    padding-left:$chk-size;
+}
+.chk.hide_txt > span {
+    font-size:0;
+}
+//--------------------- chk-type2
+.chk-type2 {
+    &:hover > span:before{
+        background-color: $chk-bg-checked-type2;
+    }
+}
+.chk-type2 > span:after{
+    background-color:$chk-bg-checked-type2;
+}
+// .chk-type2 input:checked + span, .chk-type2:hover span{
+.chk-type2 input:checked + span {
+    color:$chk-text-checked-type2;
+}
+.chk-type2 input[disabled] + span,
+.chk-type2 input[readonly] + span {
+    color: $chk-text-inactive;
+}
+
+.chk-small {
+    padding: 0 0 0 22px;
+    min-height: 15px;
+    line-height: 15px;
+    > span {
+        padding-top: 0;
+        &:before {
+            width: $chk-small-size;
+            height: $chk-small-size;
+        }
+        &:after {
+            width: $chk-small-size;
+            height: $chk-small-size;
+            font-size: 8px;
+            line-height: 15px;
+        }
+    }
+}

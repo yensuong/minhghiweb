@@ -1,0 +1,214 @@
+html,
+body,
+div,
+span,
+embed,
+object,
+iframe,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+output,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+form,
+fieldset,
+legend,
+label,
+main,
+section,
+article,
+aside,
+canvas,
+details,
+summary,
+figure,
+figcaption,
+header,
+footer,
+hgroup,
+menu,
+nav,
+time,
+mark,
+audio,
+video,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include cssreset;
+}
+/* Stops IE10 from plopping a scroller over your content */
+html {
+  box-sizing: border-box;
+  text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+}
+* {
+  -webkit-text-size-adjust: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  &:before, &:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+  }
+}
+body {
+  //background-color: #e9e9e9;
+  color: $color-base;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-weight: normal;
+  letter-spacing: -0.7pt;
+  word-spacing: 0.5pt;
+}
+
+html, body {
+  height: 100%;
+  font-size: $font-size-base;
+}
+fieldset, img {
+  border: 0 none;
+}
+img {
+  max-width: 100%;
+}
+a img {
+  display: block;
+}
+dl, ul, ol, menu, li {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote {
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
+}
+q {
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
+}
+button,
+input,
+textarea,
+select,
+optgroup {
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  vertical-align: middle;
+}
+label {cursor: default}
+input:focus, button:focus, textarea:focus {
+  outline: none;
+}
+button {
+  border: 0 none;
+  background-color: transparent;
+  cursor: pointer;
+  outline-style: none;
+  &:hover, &:active, &:focus {
+    outline-style: none;
+  }
+}
+a {
+  color: $link-color-base;
+  text-decoration: none;
+  // &:visited {
+  //   color: $link-color-visited;
+  // }
+  &:hover {
+    color: $link-color-hover;
+  }
+  // &:active {
+  //   color: $link-color-active;
+  // }
+}
+address, caption, cite, code, dfn, em, var {
+  font-style: normal;
+  font-weight: normal;
+}
+figure {
+  line-height: 0;
+}
+[data-link-href] {
+  cursor: pointer;
+}
+[role="button"] {
+  cursor: pointer;
+}
+
+input {
+  &:hover, &:active, &:focus {
+    outline-style: none;
+  }
+}
+noscript {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  color: white;
+  background: gray;
+}
+h1 {
+    font-size: 30px;
+    font-size: 3.0rem;
+}
+h2 {
+    font-size: 25px;
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 20px;
+    font-size: 2.0rem;
+}
+h4 {
+    font-size: 18px;
+    font-size: 1.8rem;
+}
+h5 {
+    font-size: 15px;
+    font-size: 1.5rem;
+}
+h6 {
+    font-size: 13px;
+    font-size: 1.3rem;
+}

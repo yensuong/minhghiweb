@@ -1,0 +1,196 @@
+//Main slider : Start
+.minhghisite .flexslider {
+    margin-bottom: 0;
+    border: 0;
+    border-radius: 0;
+    @include box-shadow(none);
+    overflow: hidden;
+
+    .slides {
+        li {
+            height: 100%;
+        }
+        .slide {
+            height: 100%;
+        }
+    }
+    
+    .flex-control-nav, .flex-direction-nav li a {
+        z-index: 10;
+    }
+    .flex-direction-nav li a {
+        width: 22px !important;
+        height: 36px !important;
+        top: 50% !important;
+        margin-top: -18px;
+        &.prev {
+            background: url(#{$img-common}slider-prev.png) 0 0 no-repeat !important;
+        }
+        &.next {
+            background: url(#{$img-common}slider-next.png) 0 0 no-repeat !important;
+        }
+    }
+    .flex-control-nav {
+        bottom: 130px;
+        height: 18px;
+        li {
+            margin: 0 3px;
+            a {
+                @include square(18px !important);
+                background: url(#{$img-common}slider-nav.png) 0 0 no-repeat !important;
+                &:hover, &.flex-active {
+                    background-position: -24px 0 !important;
+                }
+                &.flex-pause {
+                    background-position: -48px 0 !important;
+                    @include scale(1);
+                    @include transition-transform(0.5s ease);
+                    &:hover {
+                        background-position: -48px 0 !important;
+                        @include scale(0.8);
+                    }
+                }
+                &.flex-play {
+                    background-position: -72px 0 !important;
+                    @include scale(1);
+                    @include transition-transform(0.5s ease);
+                    &:hover {
+                        background-position: -72px 0 !important;
+                        @include scale(0.8);
+                    }
+                }
+            }
+        }
+    }
+    
+    @media (max-width: $screen-sm - 1) {
+        .flex-direction-nav li a {
+            &.prev {
+                left: 15px !important;
+            }
+            &.next {
+                right: 15px !important;
+            }
+        }
+        .flex-control-nav {
+            bottom: 50px;
+        }
+    }
+}
+//Main slider : End
+
+//============================= header_slider
+.minhghisite .header_slider {
+    .slides {
+        height: 1024px;
+        max-height: 100%;
+        background-color: #979797;
+        position: relative;
+        .slide {
+            img {
+                @include thumbfix;
+                max-width: inherit;
+                height: 100% !important;
+            }
+        }
+        .slide-title {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            @include translate(0, -50%);
+
+            .slide-main-title {
+                margin-bottom: 31px;
+                a {
+                    background: transparent;
+                    position: inherit;
+                    margin: 0;
+                    padding: 0;
+                    font-size: 36px;
+                    text-transform: uppercase;
+                    line-height: 1.5;
+                    display: block;
+                    cursor: default;
+                    pointer-events: none;
+                    padding-bottom: 11px;
+                    color: #FFF;
+                    text-shadow: 0 0px 3px rgba(255, 255, 255, 0.3);
+                }
+                &:after {
+                    content: " ";
+                    @include size(94px, 10px);
+                    display: inline-block;
+                    background-color: $ikorn-color;
+                }
+            }
+            .slide-sub-title {
+                font-size: 18px;
+                font-style: italic;
+                color: #edecec;
+                line-height: 30px;
+                width: 70%;
+                text-shadow: 0 0px 1px rgba(237, 236, 236, 0.35);
+            }
+        }
+    }
+    @media (max-width: $screen-sm - 1) {
+        .slides {
+            height: 640px;
+
+            .slide-title {
+                padding-left: 30px;
+                padding-right: 30px;
+                .slide-main-title a {
+                    font-size: 28px;
+                }
+                .slide-sub-title {
+                    width: 100%;
+                    font-size: 16px;
+                    line-height: 1.5;
+                }
+            } 
+        }
+    }
+}
+
+//======================= testimonials_slider
+.minhghisite .testimonials_slider {
+    background: transparent;
+    overflow: visible;
+    .slides {
+        min-height: 370px;
+        .testimonials_logo img {
+            width: auto;
+            margin: 0 auto;
+        }
+    }
+    .flex-control-nav {
+        bottom: -106px;
+    }
+    @media (max-width: $screen-sm - 1) {
+        .flex-control-nav {
+            bottom: -106px;
+        }
+    }
+}
+
+//======================= portfolio_slider
+.minhghisite .portfolio_slider {
+    background: transparent;
+    padding-bottom: 64px;
+    .slides {
+        min-height: 100px;
+    }
+    .flex-control-nav {
+        bottom: 0;
+    }
+    .flex-direction-nav li a {
+        margin-top: -50px;
+    }
+    @media (max-width: $screen-sm - 1) {
+        .flex-control-nav {
+            bottom: 0;
+        }
+    }
+}

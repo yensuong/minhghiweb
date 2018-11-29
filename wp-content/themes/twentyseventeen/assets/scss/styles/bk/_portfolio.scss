@@ -1,0 +1,107 @@
+// Porfolio
+// atexpats
+.project_section{
+	// padding-bottom:0;
+	.gray_circle{
+		margin: 45px auto;
+	}
+	.ul_list{
+		margin-left: 20px;
+
+	}
+}
+.btn_close{
+	background:url(../images/business/close_icon.png) top left no-repeat;
+	width: 15px;
+	height:15px;
+	position:absolute;
+	top:25px;
+	right:28px;
+	cursor:pointer;
+}
+.portfolio_content{
+	color:#222;
+	line-height:28px;	
+	font-size:16px;
+}
+.portfolio_footer{
+	margin-top:60px;
+}
+
+.btn_app{
+	cursor: pointer;
+	color: #848484;
+	height: 80px;
+	padding:7px;
+	margin-bottom:48px;
+	border:1px solid #fff;
+	width:100%;
+	.btn_inner{
+		background:#322121;
+		border:1px solid #fff;
+		height: 64px;
+		line-height: 64px;
+	}
+	&:hover{
+		color: #848484;
+		font-size:24px;
+		border:1px solid #464646;
+		.btn_inner{
+			background:#fff;
+			color: #222222;
+			font-size:30px;
+		}
+	}
+}
+//
+.portfolio_layer{
+	position: relative;
+    top: -150px;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    z-index: 9;
+    margin-bottom: -150px;
+    &.dubuappsuite{
+    	top: -260px;
+    	margin-bottom: -260px;
+    }
+	h3{
+		font-size: 30px;
+		color: #222;
+		margin-bottom: 35px;
+	}
+}
+.portfolio_detail{
+	border:1px solid #464646;
+	padding: 29px 55px 26px;
+	display: none;
+}
+@media (max-width: $screen-md - 1){
+	.btn_app{
+		margin-bottom: 10px;
+	}
+	.portfolio_layer{
+		&.dubuappsuite{
+    		top: 18%;
+		    margin-bottom: 0;
+		    position: fixed;
+		    left: 0;
+    	}
+	}
+	.portfolio_detail{
+	    height: 700px;
+		overflow-y: auto;
+	}
+}
+@media (max-width: $screen-sm - 1){
+	.portfolio_layer{
+		&.dubuappsuite{
+			top: 60px;
+		}
+	}
+	.portfolio_detail{
+	    height: 550px;
+		overflow-y: auto;
+	}
+}

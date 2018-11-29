@@ -1,0 +1,51 @@
+// Utilities
+@import "mixins/hide-text";
+@import "mixins/opacity";
+@import "mixins/reset-filter";
+@import "mixins/responsive-visibility";
+@import "mixins/size";
+@import "mixins/reset-text";
+@import "mixins/text-overflow";
+@import "mixins/vendor-prefixes";
+
+// Skins
+@import "mixins/border-radius";
+
+// Layout
+@import "mixins/clearfix";
+@import "mixins/center-block";
+@import "mixins/grid-framework";
+@import "mixins/grid";
+
+@import "mixins/custom/triangle";//Ikorn source
+@import "mixins/custom/thumbfix";//Ikorn source
+@import "mixins/custom/custom-scrollbar";//Ikorn source
+
+@mixin cssreset() {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+// multi line text overflow, IE8+
+@mixin multi-line($line) {
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+@mixin break-word() {
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+// Px2em function
+// -------------------------
+@function px2em ($font_size, $base_font_size: $font-size-base) {
+  @return ($font_size / $base_font_size) + em;
+}

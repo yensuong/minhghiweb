@@ -1,0 +1,66 @@
+.aboutus_main_img {}
+.aboutus_main_info {
+	font-size: 14px;
+	color: $lightblack;
+	line-height: 24px;
+}
+.aboutus_office {
+	background-repeat: no-repeat;
+	min-height: 330px;
+	&.left {
+		background-position: top left;
+		.aboutus_office_info {
+			float: right;
+		}
+	}
+	&.right {
+		background-position: top right;
+		.aboutus_office_info {
+			float: left;
+		}
+	}
+	.aboutus_office_info {
+		background-color: $lightblack;
+		width: 660px;
+		padding: 20px 40px;
+		margin-top: 45px;
+	}
+	.aboutus_office_name {
+		font-size: 18px;
+		color: #ffffff;
+		text-transform: uppercase;
+		line-height: 30px;
+		margin-bottom: 10px;
+	}
+	.aboutus_office_text {
+		font-size: 14px;
+		color: #c4c4c4;
+		line-height: 22px;
+	}
+}
+
+@media (max-width: $screen-sm) {
+	.aboutus_office {
+		padding-top: 330px;
+		min-height: auto;
+		.aboutus_office_info {
+			margin-top: 0;
+			padding: 16px 20px;
+			width: 100%;
+		}
+		&.left, &.right {
+			background-position: top;
+			background-size: 100% auto;
+			.aboutus_office_info {
+				float: none;
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-xs) {
+	.aboutus_office { padding-top: 200px; }
+	.aboutus_main_img {
+		margin-bottom: 10px;
+	}
+}

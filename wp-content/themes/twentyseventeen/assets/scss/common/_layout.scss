@@ -1,0 +1,60 @@
+@media only screen and (max-width: $screen-xs) {
+  html, body {
+    .minhghisite {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+  }
+}
+
+.type-page .entry-header{
+  display: none !important;
+}
+
+#wpadminbar {
+  display: none !important;
+}
+
+.site-content-contain {
+  @include clearfix;
+}
+
+//* Scroll_To_Top : Start 
+.scrollup {
+    display: none;
+    position: fixed;
+    width: 62px;
+    height: 62px;
+    border-radius:50%;
+    padding-top: 16px;
+    bottom: 10px;
+    right: 15px;
+    text-align:center;
+    background-color: $ikorn-color;
+    cursor: pointer;
+    z-index: $zindex-modal;
+    @include opacity(0.95);
+    @include scale(0.8);
+    @include transition(all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28));
+    &:hover {
+      @include opacity(1);
+      @include scale(1);
+    }
+}
+//* Scroll_To_Top : End 
+
+.align_left{
+  text-align: left;
+}
+.align_right{
+  text-align: right;
+}
+.align_center{
+  text-align: center;
+}
+.float_left{
+  float: left;
+}
+.float_right{
+  float: right;
+}

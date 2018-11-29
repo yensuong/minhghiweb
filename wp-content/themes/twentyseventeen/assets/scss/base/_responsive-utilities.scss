@@ -1,0 +1,98 @@
+@include responsive-invisibility('.visible-xs');
+@media (max-width: $screen-xs) {
+  @include responsive-invisibility('.hidden-xs');
+  @include responsive-visibility('.visible-xs');
+}
+
+@include responsive-invisibility('.visible-sm');
+@media (max-width: $screen-sm) {
+  @include responsive-invisibility('.hidden-sm');
+  @include responsive-visibility('.visible-sm');
+}
+
+@include responsive-invisibility('.visible-md');
+@media (max-width: $screen-md) {
+  @include responsive-invisibility('.hidden-md');
+  @include responsive-visibility('.visible-md');
+}
+
+@include responsive-invisibility('.visible-lg');
+@media (max-width: $screen-lg) {
+  @include responsive-invisibility('.hidden-lg');
+  @include responsive-visibility('.visible-lg');
+}
+
+@include responsive-invisibility('.visible-xl');
+@media (max-width: $screen-xl) {
+  @include responsive-invisibility('.hidden-xl');
+  @include responsive-visibility('.visible-xl');
+}
+
+@media (min-width: $screen-sm) { // From 768px to Undefined (pc)
+  .hidden-only-xs.hidden-only-md {display: none !important;}
+  .hidden-only-xs.hidden-only-lg {display: none !important;}
+  .hidden-only-sm.hidden-only-md {display: none !important;}
+  .hidden-only-sm.hidden-only-lg {display: none !important;}
+  .hidden-only-md {display: none !important;}
+  .hidden-only-md.hidden-only-lg {display: none !important;}
+  .hidden-only-lg.hidden-only-md {display: none !important;}
+  .hidden-only-lg {display: none !important;}
+
+  .hidden-only-xs {display: block !important;}
+  .hidden-only-xs.hidden-only-sm {display: block !important;}
+  .hidden-only-sm.hidden-only-xs {display: block !important;}
+  .hidden-only-sm {display: block !important;}
+}
+
+@media (min-width: $screen-xs) and (max-width: $screen-sm - 1) { // From 480 - 767 (tablet)
+  .hidden-only-xs {display: block !important;}
+  .hidden-only-xs.hidden-only-md {display: block !important;}
+  .hidden-only-xs.hidden-only-lg {display: block !important;}
+  .hidden-only-md.hidden-only-xs {display: block !important;}
+  .hidden-only-md {display: block !important;}
+  .hidden-only-md.hidden-only-lg {display: block !important;}
+  .hidden-only-lg.hidden-only-xs {display: block !important;}
+  .hidden-only-lg.hidden-only-md {display: block !important;}
+  .hidden-only-lg {display: block !important;}
+
+  .hidden-only-lg.hidden-only-sm {display: none !important;}
+  .hidden-only-md.hidden-only-sm {display: none !important;}
+  .hidden-only-sm {display: none !important;}
+  .hidden-only-xs.hidden-only-sm {display: none !important;}
+
+  .visible-only-lg.visible-only-sm {display: block !important;}
+  .visible-only-md.visible-only-sm {display: block !important;}
+  .visible-only-sm {display: block !important;}
+  .visible-only-xs.visible-only-sm {display: block !important;}
+}
+
+@media (max-width: $screen-xs - 1) { //From 0 - 479px (mobile)
+  .hidden-only-sm {display: block !important;}
+  .hidden-only-sm.hidden-only-md {display: block !important;}
+  .hidden-only-sm.hidden-only-lg {display: block !important;}
+  .hidden-only-md.hidden-only-sm {display: block !important;}
+  .hidden-only-md {display: block !important;}
+  .hidden-only-md.hidden-only-lg {display: block !important;}
+  .hidden-only-lg.hidden-only-sm {display: block !important;}
+  .hidden-only-lg.hidden-only-md {display: block !important;}
+  .hidden-only-lg {display: block !important;}
+
+  .hidden-only-xs {display: none !important;}
+  .hidden-only-sm.hidden-only-xs {display: none !important;}
+  .hidden-only-md.hidden-only-xs {display: none !important;}
+  .hidden-only-lg.hidden-only-xs {display: none !important;}
+
+  .visible-only-xs {display: block !important;}
+  .visible-only-sm.visible-only-xs {display: block !important;}
+  .visible-only-md.visible-only-xs {display: block !important;}
+  .visible-only-lg.visible-only-xs {display: block !important;}
+}
+
+@media print {
+  .visible-print {
+    display: inherit !important;
+  }
+  .hidden-print {
+    display: none !important;
+  }
+}

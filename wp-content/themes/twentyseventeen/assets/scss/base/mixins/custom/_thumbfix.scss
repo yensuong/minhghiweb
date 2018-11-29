@@ -1,0 +1,7 @@
+@mixin thumbfix() {
+  object-fit: cover;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  height: 100%;
+}

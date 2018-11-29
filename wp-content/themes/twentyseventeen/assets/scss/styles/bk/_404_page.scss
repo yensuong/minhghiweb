@@ -1,0 +1,77 @@
+.error404 {
+	.site-header {
+		background-color: rgba(50, 33, 33, 0.95);
+	}
+	.site-content-contain {
+		padding-top: $header-height;
+	}
+	.error_page {
+		height: 545px;
+		background: url(#{$img-common}error_404.png) no-repeat 50% 100%;
+		-webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	    background-size: cover;
+		overflow: hidden;
+	}
+	.error_page_content {
+		width: 766px;
+		height: 134px;
+		max-width: 100%;
+		margin: 200px auto 0 auto;
+		@include clearfix;
+	}
+	.error_page_num {
+		background: url(#{$img-common}404_num.png) no-repeat top center;
+		width: 300px;
+		height: 134px;
+		float: left;
+	}
+	.error_page_right {
+		background: url(#{$img-common}404_text.png) no-repeat top center;
+		width: 458px;
+		height: 134px;
+		float: left;
+		padding-top: 72px;
+    	padding-left: 42px;
+	}
+	.error_page_text {
+		font-size: 18px;
+		color: #c3c3c3;
+		line-height: 24px;
+		padding-top: 12px;
+		border-top: solid 1px #c7beb9;
+		a {
+			color: #ffffff;
+		}
+	}
+}
+//Mobile spacing
+@media (max-width: $screen-sm - 1) {
+	.error404 {
+		.error_page_content {
+			width: auto;
+			margin-top: 100px;
+		}
+		.error_page_num {
+			float: none;
+			margin: 30px auto;
+		}
+		.error_page_right {
+			float: none;
+			width: 330px;
+			margin: 0 auto;
+			background-size: 100% auto;
+			padding-top: 54px;
+    		padding-left: 0;
+		}
+	}
+	.error404 .site-content-contain {
+		padding-top: $header-height-xs;
+	}
+}
+@media (min-width: $screen-sm) and (max-width: $screen-md - 1) {
+	.error404 .site-content-contain {
+		padding-top: $header-height-sm;
+	}
+}

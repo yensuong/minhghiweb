@@ -1,0 +1,96 @@
+$rdo-size:                 16px !default;
+$rdo-text-normal:          #6d6d6d !default;
+$rdo-text-checked:         #6786b8 !default;
+$rdo-text-inactive:        #d2d2d2 !default;
+$rdo-bg-normal:            #ffffff !default;
+$rdo-bg-normal-checked:    #6786b8 !default;
+$rdo-bg-inactive:          #ededed !default;
+$rdo-bg-inactive-checked:  #d2d2d2 !default;
+$rdo-border-normal:        #6d6d6d !default;
+$rdo-border-inactive:      #d2d2d2 !default;
+//************* Forms - Input Radio *******************
+.rdo {
+    display:inline-block;
+    cursor:pointer;
+    vertical-align:middle;
+    padding: 5px 0 0px 23px;
+    position:relative;
+    min-height:20px;
+    line-height:1;
+    font-size:12px;
+    -webkit-user-select: none;
+    // &:hover > span:before{
+    //     border:1px solid #959595;
+    // }
+}
+.rdo input {
+    display:none;
+}
+.rdo > span {
+    color: $rdo-text-normal;
+    white-space:nowrap;
+    display:block;
+}
+.rdo > span:before{
+    content:"";
+    width: $rdo-size;
+    height: $rdo-size;
+    position:absolute;
+    left:0;
+    top:2px;
+    border:1px solid $rdo-border-normal;
+    border-radius:50%;
+    background-color: $rdo-bg-normal;
+}
+.rdo > span:after{
+    content:"";
+    display:inline-block;
+    width: $rdo-size;
+    height: $rdo-size;
+    position:absolute;
+    left:0;
+    top:2px;
+    background-color: $rdo-bg-normal-checked;
+    border-radius:47%;
+    -webkit-transform:scale(0);
+       -moz-transform:scale(0);
+         -o-transform:scale(0);
+            transform:scale(0);
+
+    -webkit-transition:-webkit-transform 0.1s 0s cubic-bezier(0.455, 0.03, 0.215, 1.33);
+       -moz-transition:-moz-transform 0.1s 0s cubic-bezier(0.455, 0.03, 0.215, 1.33);
+         -o-transition:-o-transform 0.1s 0s cubic-bezier(0.455, 0.03, 0.215, 1.33);
+            transition:transform 0.1s 0s cubic-bezier(0.455, 0.03, 0.215, 1.33);
+
+}
+.rdo input:checked + span, .rdo:hover span {
+    color: $rdo-text-checked;
+}
+.rdo input:checked + span:before{
+    border-color: $rdo-border-normal;
+}
+.rdo input:checked + span:after{
+    -webkit-transform:scale(0.5);
+       -moz-transform:scale(0.5);
+         -o-transform:scale(0.5);
+            transform:scale(0.5);
+
+}
+.rdo input[disabled] + span {
+    color: $rdo-text-inactive;
+}
+.rdo input[disabled] + span:before,
+.rdo input[disabled][checked] + span:before {
+   background-color: $rdo-bg-inactive;
+   // color: $rdo-text-inactive;
+   border-color: $rdo-border-inactive;
+}
+.rdo input[disabled] + span:after {
+   background-color: $rdo-bg-inactive-checked;
+}
+.rdo.hide_txt {
+    padding-left:23px;
+}
+.rdo.hide_txt > span {
+    font-size:0;
+}

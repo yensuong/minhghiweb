@@ -457,8 +457,13 @@ function twentyseventeen_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'twentyseventeen_scripts' );
-
+function ikorn_style(){
+	wp_enqueue_style( 'ikorn', get_theme_file_uri( '/assets/css/minhghi.styles.css' ), [], '1.0' );
+	//wp_enqueue_script( 'main', get_theme_file_uri( '/assets/js/ikorn.common.js' ), array( 'jquery' ), '1.0', false );
+	//wp_enqueue_script( 'datalabelling', get_theme_file_uri( '/assets/js/datalabelling.js' ), array( 'jquery' ), '1.0', false );
+}
+//add_action( 'wp_enqueue_scripts', 'twentyseventeen_scripts' );
+add_action( 'wp_enqueue_scripts', 'ikorn_style' );
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
  * for content images.

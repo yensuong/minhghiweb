@@ -1,0 +1,151 @@
+.site-footer {
+	background-color: #322121;
+	color: #555555;
+	padding-bottom: 90px;
+	padding-top: 60px;
+	font-size: 14px;
+
+	a {
+		color: #555555;
+		&:hover {
+			color: #FFF;
+		}
+	}
+	.widget-column {
+		min-height: 330px;
+		padding-bottom: 30px;
+	}
+	.widget-title {
+		font-size: 16px;
+		font-weight: normal;
+		text-transform: uppercase;
+		padding-top: 6px;
+		padding-bottom: 22px;
+		color: #FFF;
+	}
+	//==============
+	.site-info {
+		padding-top: 40px;
+		border-top: 1px solid #555;
+		.site-title {
+			a {
+				@include size(122px, 29px);
+				background: url(#{$img-common}logo-footer.png) 0 0 no-repeat;
+			}
+		}
+		.copyright {
+			display: inline-block;
+			font-size: 12px;
+			padding-top: 11px;
+		}
+	}
+	//==============
+	.custom-html-widget {
+		input[type="text"],
+		input[type="email"] {
+			width: 100%;
+			height: 40px;
+			padding-left: 13px;
+			border: 1px solid #555555;
+			background-color: #322121;
+			font-size: 14px;
+			color: #FFF;
+			@include placeholder(#555555);
+		}
+		input[type="submit"] {
+			padding: 0;
+			border: 0;
+			font-size: 18px;
+			color: #555555;
+			cursor: pointer;
+			position: relative;
+			text-align: center;
+			background: transparent;
+		}
+		.submit {
+			display: inline-block;
+			text-align: center;
+			cursor: pointer;
+			
+			&:after {
+				content: " ";
+				display: block;
+				height: 2px;
+				width: 55px;
+				background-color: #555555;
+				margin: 0 auto;
+				margin-top: 7px;
+			}
+			&:hover {
+				input {
+					color: #FFF;
+				}
+				&:after {
+					background-color: #fff;
+				}
+			}
+		}
+		form > p {
+			margin-bottom: 18px;
+			&.row-submit {
+				padding-top: 5px;
+				text-align: center;
+			}
+			.ajax-loader {
+				display: none;
+			}
+		}
+	}
+	//==============
+	.widget_recent_entries {
+		ul {
+			li {
+				padding-top: 5px;
+				padding-bottom: 15px;
+				border-top: 1px solid #555555;
+				> a {
+					color: #8b8383;
+					font-size: 14px;
+					@include text-overflow;
+					display: inline-block;
+					margin-bottom: -6px;
+					width: 100%;
+					&:hover {
+						color: #FFF;
+					}
+				}
+				> div {
+					font-size: 12px;
+					line-height: 17px;
+					max-height: 34px;
+					padding-left: 10px;
+					@include multi-line(2);
+				}
+			}
+		}
+	}
+	//==============
+	.widget_categories {
+		ul {
+			margin-top: -6px;
+			li {
+				line-height: 24px;
+			}
+		}
+	}
+	//==============
+	ul.site-social {
+		display: inline-block;
+		> li {
+			display: inline-block;
+			margin-right: 12px;
+		}
+	}
+}
+@media (max-width: $screen-sm) {
+	.site-footer {
+		.widget-column {
+			min-height: auto;
+		}
+	}	
+}

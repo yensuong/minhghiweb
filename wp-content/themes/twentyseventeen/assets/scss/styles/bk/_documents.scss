@@ -1,0 +1,205 @@
+.doc-type {
+	padding-top: 50px;
+	padding-bottom:80px;
+	overflow: hidden;
+	.doc-doc {
+		min-width: 125px;
+
+		.doc-icon {
+			// width: 125px;
+			height: 71px;
+			margin-bottom: 29px;
+			display: block;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			background-size: contain;
+			overflow: hidden;
+			@include scale(1);
+			@include transition-transform(1s cubic-bezier(0.18, 0.89, 0.32, 1.28));
+		}
+		&.__file .doc-icon { background-image: url(#{$img-src}document/document_icon_file.svg); }
+		&.__sheet .doc-icon { background-image: url(#{$img-src}document/document_icon_sheet.svg); }
+		&.__find .doc-icon { background-image: url(#{$img-src}document/document_icon_find.svg); }
+		&.__document .doc-icon { background-image: url(#{$img-src}document/document_icon_document.svg); }
+		&:hover, &.active {
+			color: #222222;
+			&.__file .doc-icon { background-image: url(#{$img-src}document/document_icon_file_o.svg); }
+			&.__sheet .doc-icon { background-image: url(#{$img-src}document/document_icon_sheet_o.svg); }
+			&.__find .doc-icon { background-image: url(#{$img-src}document/document_icon_find_o.svg); }
+			&.__document .doc-icon { background-image: url(#{$img-src}document/document_icon_document_o.svg); }
+		}
+	}
+	.doc-type-name {
+		font-weight: normal;
+		display: block;
+	}
+}
+
+.section_document {
+	.doc-type .doc-doc:hover {
+		.doc-icon {
+			@include scale(1.25);
+			// -webkit-animation: zoomin 2s ease-in infinite;
+			// animation: zoomin 2s ease-in infinite;
+			// transition: all .2s ease-in-out;
+		}
+	}
+	@media (min-width: 480px) {
+		.section_title {
+			margin-bottom: 40px;
+		}
+	}
+}
+
+.document_group {
+	.document_info {
+		margin-top: 23px;
+		padding-bottom: 26px;
+		border-bottom: 1px solid #959595;
+	}
+	.document_list {
+		padding-top: 9px;
+	}
+	.document_read {
+		display: none;
+		.read-title {
+			font-size: 20px;
+			color: $ikorn-color;
+			margin-top: 12px;
+			margin-bottom: 21px;
+		}
+		.book-page-panel {
+			text-align: center;
+			background-color: #ebebeb;
+			padding: 10px 15px 50px;
+		}
+		.book-page {
+			min-height: 575px;
+			max-width: 100%;
+			background-color: #fff;
+			position: relative;
+			height: 575px;
+			width: 980px;
+			margin: 0 auto;
+			text-align: left;
+			box-shadow: 0 0 10px rgba(0,0,0,0.21);
+			@include custom-scrollbar;
+		}
+		.book-page-btn {
+			text-align: right;
+			margin-bottom: 30px;
+			padding: 0 20px;
+			button {
+				width: 19px;
+				height: 19px;
+				padding: 0;
+				text-align: center;
+				cursor: pointer;
+				margin-left: 8px;
+				line-height: 19px;
+				@include opacity(1);
+				@include scale(1);
+				@include transition(all 0.4s ease-in);
+				&:hover {
+					@include opacity(0.8);
+					@include scale(0.8);
+				}
+			}
+			.btn_book_download {
+				display: none;
+			}
+		}
+	}
+}
+.doc-items {
+	.doc-item {
+		width: 33%;
+		height: 34px;
+		list-style-type: decimal;
+		font-size: 20px;
+		list-style-position: inside;
+		margin: 5px 0;
+		padding-left: 5px;
+		position: relative;
+		float: left;
+		
+		.title {
+			display: inline-block;
+			@include text-overflow;
+			max-width: calc(100% - 140px);
+			vertical-align: bottom;
+			padding-top: 2px;
+		}
+		.btn {
+			position: absolute;
+			// right: 5px;
+			top: 0;
+			margin-left: 10px;
+		}
+		&:hover {
+			.title {
+				color: $ikorn-color;
+			}
+		}
+	}
+}
+@media all and (min-width: $screen-sm) and (max-width: $screen-md - 1) {
+	.doc-items .doc-item {
+		width: 50%;
+	}
+	.document_group {
+		.document_read {
+			.book-page-panel {
+				padding: 10px 15px 15px;
+			}
+			.book-page {
+				min-height: 480px;
+				height: 480px;
+			}
+		}
+	}
+}
+@media all and (max-width: $screen-sm - 1) {
+	.doc-items .doc-item {
+		width: 100%;
+		float: none;
+		.btn {
+			right: 0;
+		}
+	}
+	.document_group {
+		.document_read {
+			.book-page-panel {
+				padding: 10px 5px 10px;
+			}
+			.book-page {
+				min-height: 400px;
+				height: 400px;
+			}
+		}
+	}
+}
+
+// /* Zoom in Keyframes */
+// @-webkit-keyframes zoomin {
+//   0% {transform: scale(1);}
+//   50% {transform: scale(1.25);}
+//   100% {transform: scale(1);}
+// }
+// @keyframes zoomin {
+//   0% {transform: scale(1);}
+//   50% {transform: scale(1.25);}
+//   100% {transform: scale(1);}
+// } /*End of Zoom in Keyframes */
+
+// /* Zoom out Keyframes */
+// @-webkit-keyframes zoomout {
+//   0% {transform: scale(1);}
+//   50% {transform: scale(0.67);}
+//   100% {transform: scale(1);}
+// }
+// @keyframes zoomout {
+//     0% {transform: scale(1);}
+//   50% {transform: scale(0.67);}
+//   100% {transform: scale(1);}
+// }/*End of Zoom out Keyframes */

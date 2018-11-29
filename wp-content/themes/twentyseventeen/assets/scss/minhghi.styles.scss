@@ -1,0 +1,58 @@
+@charset "UTF-8";
+// Font icons
+// @import "fonticon/style.scss";
+
+//Base
+@import "base/variable";
+@import "base/mixin";
+@import "base/reset";
+@import "base/util";
+@import "base/grids";
+@import "base/responsive-utilities";
+
+//Kit
+@import "kit/icons";
+@import "kit/buttons";
+@import "kit/form";
+// @import "kit/dropdownpop";
+@import "kit/checkbox";
+// @import "kit/radio";
+@import "kit/paginator";
+@import "kit/switch";
+
+//common
+@import "common/layout";
+@import "common/header";
+@import "common/footer";
+@import "common/bodywrap";
+@import "common/content";
+@import "common/breadcrumbs";
+// @import "common/chart_pie";
+// @import "common/chart_pie_custom";
+@import "common/minhghi.responsive-slider";
+
+//Style: content format for all style included both mainpage + subpage
+// @import "styles/aboutus";
+// @import "styles/aboutus_main";
+// @import "styles/aboutus_history";
+// @import "styles/detail_page";
+// @import "styles/business";
+// @import "styles/business_extra";
+// @import "styles/portfolio";
+// @import "styles/software_outsourcing";
+// @import "styles/software_testing";
+// @import "styles/delicated_team";
+// @import "styles/documents";
+// @import "styles/creative_content";
+// @import "styles/404_page";
+
+//Home page
+// @import "styles/homepage";
+// @import "styles/homepage_tracker";
+// @import "styles/homepage_testimonials";
+// @import "styles/homepage_portfolio";
+
+// disable vi language
+// .lang-item-vi{
+// 	display:none !important;
+// }
